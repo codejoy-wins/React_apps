@@ -4,11 +4,13 @@ import './App.css';
 
 class App extends Component {
   render() {
-    
+    let prime = [];
     let num = 0;
     let primes = 0;
 
     const msg = "Collect Primes to decrypt Secret Message";
+    const msg2 = "Welcome to prime absortion";
+
     const myFunc = () =>{
         // what if I made this impact the size of something
         console.log(`myfunc n is ${num}`);
@@ -17,8 +19,26 @@ class App extends Component {
     }
     const reset = () =>{
       getStyle();
+      // if prime is above 100, change all to red and do alerts
+
+      if(primes > 5){
+        console.log('alert');
+        getStyle('red');
+        document.getElementById("warning").innerHTML = `
+        <h5>DANGER!</h5>
+        `
+      }
+      if(primes > 10){
+        alert('explosion');
+        getStyle("danger");
+        document.getElementById("warning").innerHTML = `
+        <h5>DANGER!</h5>
+        `
+      }
+
+
       // if primes contains current num, return
-      
+
       console.log(`resetting if prime num: ${num}`);
       if(num == 0 || num ==1){
         console.log(
@@ -34,6 +54,18 @@ class App extends Component {
       }
       console.log('prime num');
       primes++;
+      // does prime contain num already?
+      console.log("repeat prime?");
+      console.log(prime.includes(num));
+      console.log("repeat prime? ^");
+
+      // if true then don't push
+
+      prime.includes(num) ? console.log('ya') : console.log('nah');
+      prime.includes(num) ? primes-- : prime.push(num);
+
+      // prime.push(num);
+      console.log(`prime is ${prime}`);
       console.log(`total primes: ${primes}`);
       document.getElementById('primal').innerHTML = primes;
 
@@ -83,8 +115,17 @@ class App extends Component {
       fontSize: `12px`
     }
 
-    const getStyle = () => {
+    const getStyle = (cola) => {
       console.log('style function');
+      console.log(`cola or color is ${cola}`);
+      try {
+        console.log(`colo.someting ${cola.color}`);        
+      }
+      catch {
+        console.log(`hello`)
+      }
+      // I wish I could make it change color depending on the # of primes
+
       let xp = {
         background: 'gold',
         color: "pink",
@@ -111,10 +152,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <div id="output">
           </div>
-          <h1>{msg}</h1>
-          <div style = {xp1} id="xp" onClick={getStyle}>xp </div>
+          <h1>{msg2}</h1>
+          <div style = {xp1} id="xp" onClick={getStyle}>{msg} </div>
+          <div id="warning"></div>
+
           <div style = {flowy}>
-            <p id="primal2"># of Primes absorbed: <span style = {flowcast} id="primal">{primes}</span></p>
+            <p id="primal2">Unique Primes absorbed: <span style = {flowcast} id="primal">{primes}</span></p>
           </div>
           <div style = {newStyle} id="special">Primes Absorbed</div>
           <button style = {myStyle} onClick={myFunc}>Feed Energy</button>
