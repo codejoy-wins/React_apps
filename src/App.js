@@ -14,7 +14,7 @@ class App extends Component {
     let primes = 0;
 
     const msg = "Collect Primes to decrypt Secret Message";
-    const msg2 = "Welcome to prime absortion4";
+    const msg2 = "Welcome to prime absortion";
 
     const myFunc = () =>{
         // what if I made this impact the size of something
