@@ -108,8 +108,8 @@ class App extends Component {
     }
 
     const flowcast = {
-      background: 'gold',
-      color: 'black',
+      background: 'black',
+      color: 'aqua',
       padding: '11px'
     }
 // making padding a dynamic variable doesn't work
