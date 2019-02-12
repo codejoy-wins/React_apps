@@ -149,6 +149,10 @@ class App extends Component {
         <p style= font-size:${primes}px; > You could have used inspect element<p>
       `
       console.log(`prime size: ${primes}`);
+        // <div>I was able to make the text grow but now the image.  Need to start following directions</div>
+      // document.getElementById('xp4').innerHTML=`
+      //   <div>I was able to make the text grow but now the image.  Need to start following directions</div>
+      // `
     }
 
     return (
@@ -161,6 +165,9 @@ class App extends Component {
           <h1>{msg2}</h1>
           <div style = {xp1} id="xp" onClick={getStyle}>{msg} </div>
           <div id="warning"></div>
+          <div id="xp4">
+          </div>
+
 
           <div style = {flowy}>
             <p id="primal2">Unique Primes absorbed2: <span style = {flowcast} id="primal">{primes}</span></p>
