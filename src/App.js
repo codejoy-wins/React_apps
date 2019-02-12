@@ -14,7 +14,7 @@ class App extends Component {
     let primes = 0;
 
     const msg = "Collect Primes to decrypt Secret Message";
-    const msg2 = "Welcome to prime absortion";
+    const msg2 = "Welcome to prime absortion4";
 
     const myFunc = () =>{
         // what if I made this impact the size of something
@@ -45,14 +45,14 @@ class App extends Component {
       // if primes contains current num, return
 
       console.log(`resetting if prime num: ${num}`);
-      if(num == 0 || num ==1){
+      if(num === 0 || num ===1){
         console.log(
           'panic'
         )
         return;
       }
       for(let i =2; i < num; i++){
-        if(num%i==0){
+        if(num%i===0){
           console.log('not prime');
           return;
         }
