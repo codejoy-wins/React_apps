@@ -174,17 +174,15 @@ class App extends Component {
     return (
       <div className="App">
         <div><Portfolio/></div>
-        { list.map((item)=>
-        // <div>
-        // {item.title}
-        // </div>)}
-        <div>
-        <span>
-        <a href={item.url}>{item.title}</a>
-        </span>
-        <span> {item.author}</span>,
-        <span> {item.num_comments} comments</span>,
-        <span> {item.points} points</span>
+        
+        { list.map(item=>
+        <div key={item.objectID}>
+          <span>
+          <a href={item.url}>{item.title}</a>
+          </span>
+          <span> {item.author}</span>,
+          <span> {item.num_comments} comments</span>,
+          <span> {item.points} points</span>
         </div>)}
         
         {/* { list.map(function(item){ return <div>{item.title} es5</div>})} */}
