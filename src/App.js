@@ -40,7 +40,7 @@ class App extends Component {
         document.getElementById('output').innerHTML = num;
     }
     const reset = () =>{
-      getStyle();
+      setTimeout(function(){ getStyle(); }, 1000);
       // if prime is above 100, change all to red and do alerts
 
       if(primes > 5){
@@ -184,7 +184,7 @@ class App extends Component {
           <span> {item.num_comments} comments</span>,
           <span> {item.points} points</span>
         </div>)}
-        
+
         {/* { list.map(function(item){ return <div>{item.title} es5</div>})} */}
 
         <header className="App-header">
