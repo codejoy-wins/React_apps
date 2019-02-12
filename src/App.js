@@ -170,7 +170,7 @@ class App extends Component {
 
 
           <div style = {flowy}>
-            <p id="primal2">Unique Primes absorbed2: <span style = {flowcast} id="primal">{primes}</span></p>
+            <p id="primal2">Unique Primes absorbed: <span style = {flowcast} id="primal">{primes}</span></p>
           </div>
           <div style = {newStyle} id="special">Primes Absorbed</div>
           <button style = {myStyle} onClick={myFunc}>Feed Energy</button>
