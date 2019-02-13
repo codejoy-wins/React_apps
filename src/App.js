@@ -21,6 +21,22 @@ num_comments: 2,
 points: 5,
 objectID: 1,
 },
+{
+  title: 'Racing Game',
+  url: 'https://codejoy-wins.itch.io/race-track',
+  author: 'Max Jann, Jann Software',
+  num_comments: 23,
+  points: 117,
+  objectID: 2,
+  },
+  {
+    title: 'Red Grass Island Apocalypse',
+    url: 'https://codejoy-wins.itch.io/red-grass-island-apocalypse-2019',
+    author: 'Max Jann, Jann Software',
+    num_comments: 24,
+    points: 118,
+    objectID: 3,
+    },
 ];
 // make a custom portfolio component and link to it have on home page
 
