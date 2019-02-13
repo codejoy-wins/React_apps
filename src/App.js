@@ -25,6 +25,27 @@ objectID: 1,
 // make a custom portfolio component and link to it have on home page
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      list,
+    }
+
+    this.onDismiss = this.onDismiss.bind(this);
+  }
+
+  onDismiss(id){
+    console.log(`deleting ${id}`);
+    const isnt = item => item.objectID !== id;
+    const updatedList = this.state.list.filter(isnt);
+    console.log(`updated list after deleting ${id} is ${updatedList}`);
+
+    this.setState({list:updatedList});
+  }
+
+
   render() {
     let prime = [];
     let num = 0;
@@ -174,8 +195,8 @@ class App extends Component {
     return (
       <div className="App">
         <div><Portfolio/></div>
-        
-        { list.map(item=>
+      
+        { this.state.list.map(item=>
         <div key={item.objectID}>
           <span>
           <a href={item.url}>{item.title}</a>
@@ -183,6 +204,14 @@ class App extends Component {
           <span> {item.author}</span>,
           <span> {item.num_comments} comments</span>,
           <span> {item.points} points</span>
+          <span>
+            <button
+            onClick={()=>this.onDismiss(item.objectID)}
+            type="button"
+            >
+              Dismiss
+            </button>
+          </span>
         </div>)}
 
         {/* { list.map(function(item){ return <div>{item.title} es5</div>})} */}
