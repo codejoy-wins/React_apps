@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './css/Button.css';
+
 
 class Button extends Component {
     render() {
@@ -13,6 +15,7 @@ class Button extends Component {
                 onClick={onClick}
                 className={className}
                 type="button"
+                id="btn"
             >
                 {children} via component
             </button>
