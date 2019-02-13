@@ -3,7 +3,7 @@ import Portfolio from './components/Portfolio';
 import Search from './components/Search';
 import Table from './components/Table';
 import Button from './components/Button';
-
+// I want to make a sound for the collect button
 import logo from './logo.svg';
 import './App.css';
 //state above render
@@ -48,6 +48,35 @@ objectID: 1,
 const isSearched = (searchTerm) => (item) =>
   !searchTerm || item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
+const FunctionalSearch2 = ({ value, onChange, children })=>
+<form>
+    {children}<input
+    type="text"
+    value={value}
+    onChange={onChange}
+    >
+    </input>
+</form>
+
+// Trying to functionally display table failed, same with class component
+// cannot successfully refactor table
+
+
+// const DisplayTable = ({ list, pattern, onDismiss })=>
+//   { list.filter(isSearched(searchTerm)).map(item =>
+//     <div class="robot" key={item.objectID}>
+//       <span>
+//       <a href={item.url}>{item.title}</a>
+//       </span>
+//       <span> {item.author}</span>,
+//       <span> {item.num_comments} comments</span>,
+//       <span> {item.points} points</span>
+//       <span>
+//         < Button onClick={()=> this.onDismiss(item.objectID)}> Delete </Button>
+//       </span>
+//     </div>)}
+  
+
 class App extends Component {
 
   constructor(props){
@@ -79,6 +108,9 @@ class App extends Component {
   }
 
   render() {
+
+    
+
     let prime = [];
     let num = 0;
     let primes = 0;
@@ -190,6 +222,8 @@ class App extends Component {
       fontSize: `12px`
     }
 
+    
+
     const getStyle = (cola) => {
       console.log('style function');
       console.log(`cola or color is ${cola}`);
@@ -229,14 +263,26 @@ class App extends Component {
       searchTerm,
       list,
     } = this.state
+
+
+
+    const DisplayTable = ({}) =>
+  <div>
+    Can someone help me Functionally Display the Table?
+  </div>
+  
+
     return (
       <div className="App">
         <div><Portfolio/></div>
+        <div><FunctionalSearch2 value={searchTerm}  onChange={this.onSearchChange} >Stateless Functional Search </FunctionalSearch2></div>
+        <div><DisplayTable/></div>
+
         <div>
           < Search
             value={searchTerm}
             onChange={this.onSearchChange}
-          >Searchbar: </ Search >
+          >Class Component Searchbar: </ Search >
         </div>
         <div class="robot">
           {/* < Table
@@ -268,6 +314,7 @@ class App extends Component {
         </div>)}
 
         {/* { list.map(function(item){ return <div>{item.title} es5</div>})} */}
+        {/* <div><DisplayTable/></div> */}
 
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
