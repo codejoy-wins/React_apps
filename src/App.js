@@ -24,6 +24,11 @@ objectID: 1,
 ];
 // make a custom portfolio component and link to it have on home page
 
+// searching madness
+
+const isSearched = (searchTerm) => (item) =>
+  !searchTerm || item.title.toLowerCase().includes(searchTerm.toLowerCase());
+
 class App extends Component {
 
   constructor(props){
@@ -31,8 +36,9 @@ class App extends Component {
 
     this.state = {
       list,
+      searchTerm: '',
     }
-
+    this.onSearchChange = this.onSearchChange.bind(this);
     this.onDismiss = this.onDismiss.bind(this);
   }
 
@@ -45,6 +51,13 @@ class App extends Component {
     this.setState({list:updatedList});
   }
 
+  onSearchChange(e) {
+    console.log("search change func");
+    console.log(e);
+
+    this.setState({ searchTerm: e.target.value })
+
+  }
 
   render() {
     let prime = [];
@@ -195,8 +208,13 @@ class App extends Component {
     return (
       <div className="App">
         <div><Portfolio/></div>
-      
-        { this.state.list.map(item=>
+        <form>
+          form: <input
+                  type="text"
+                  onChange={this.onSearchChange}
+                />
+        </form>
+        { this.state.list.filter(isSearched(this.state.searchTerm)).map(item =>
         <div key={item.objectID}>
           <span>
           <a href={item.url}>{item.title}</a>
