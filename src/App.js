@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Sound from 'react-sound';
 import Portfolio from './components/Portfolio';
 import Search from './components/Search';
-import Table from './components/Table';
+// import Table from './components/Table';
 import Button from './components/Button';
 // I want to make a sound for the collect button
 import logo from './logo.svg';
@@ -303,6 +304,8 @@ class App extends Component {
         <div><Portfolio/></div>
         <div><FunctionalSearch2 value={searchTerm}  onChange={this.onSearchChange} >Stateless Functional Search </FunctionalSearch2></div>
         <div><DisplayTable/></div>
+        <div><Sound/> Sound here</div>
+
         {/* <div><TableX/></div> */}
         {/* Tearing my fucking hair out, going to start over.  Simply cannot functionally display Table */}
 
