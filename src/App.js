@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Portfolio from './components/Portfolio';
+import Search from './components/Search';
+import Table from './components/Table';
+
 
 import logo from './logo.svg';
 import './App.css';
@@ -228,7 +231,22 @@ class App extends Component {
     return (
       <div className="App">
         <div><Portfolio/></div>
-        <form>
+        <div>
+          < Search
+            value={searchTerm}
+            onChange={this.onSearchChange}
+          />
+        </div>
+        <div>
+          < Table
+            list={list}
+            pattern={searchTerm}
+            onDismiss={this.onDismiss}
+            isSearched={this.isSearched}
+          />
+        </div>
+
+        <form id="spot">
           form: <input
                   type="text"
                   onChange={this.onSearchChange}
