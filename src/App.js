@@ -204,7 +204,11 @@ class App extends Component {
       //   <div>I was able to make the text grow but now the image.  Need to start following directions</div>
       // `
     }
-
+    // destructuring this.state.searchTerm
+    const {
+      searchTerm,
+      list,
+    } = this.state
     return (
       <div className="App">
         <div><Portfolio/></div>
@@ -214,7 +218,8 @@ class App extends Component {
                   onChange={this.onSearchChange}
                 />
         </form>
-        { this.state.list.filter(isSearched(this.state.searchTerm)).map(item =>
+
+        { list.filter(isSearched(searchTerm)).map(item =>
         <div key={item.objectID}>
           <span>
           <a href={item.url}>{item.title}</a>
