@@ -232,9 +232,9 @@ class App extends Component {
           form: <input
                   type="text"
                   onChange={this.onSearchChange}
+                  value={searchTerm}
                 />
         </form>
-
         { list.filter(isSearched(searchTerm)).map(item =>
         <div key={item.objectID}>
           <span>
