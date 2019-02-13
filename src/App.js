@@ -235,7 +235,7 @@ class App extends Component {
           < Search
             value={searchTerm}
             onChange={this.onSearchChange}
-          />
+          >Searchbar: </ Search >
         </div>
         <div>
           < Table
@@ -245,14 +245,14 @@ class App extends Component {
             isSearched={this.isSearched}
           />
         </div>
-
-        <form id="spot">
+{/* search in app */}
+        {/* <form id="spot">
           form: <input
                   type="text"
                   onChange={this.onSearchChange}
                   value={searchTerm}
                 />
-        </form>
+        </form> */}
         { list.filter(isSearched(searchTerm)).map(item =>
         <div key={item.objectID}>
           <span>

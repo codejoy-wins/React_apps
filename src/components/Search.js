@@ -9,15 +9,17 @@ export class Search extends Component {
     const {
     value,
     onChange,
+    children,
     } = this.props
 
     return (
         <form id="spot">
-        Premature form component: <input
-                type="text"
-                onChange={onChange}
-                value={value}
-              />
+        {children}
+        <input
+          type="text"
+          onChange={onChange}
+          value={value}
+        />
       </form>
     )
   }
