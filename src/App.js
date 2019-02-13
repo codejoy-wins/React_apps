@@ -33,7 +33,7 @@ objectID: 1,
   objectID: 2,
   },
   {
-    title: 'Red Grass Island Apocalypse',
+    title: 'RGI Apocalypse',
     url: 'https://codejoy-wins.itch.io/red-grass-island-apocalypse-2019',
     author: 'Max Jann, Jann Software',
     num_comments: 24,
@@ -92,6 +92,7 @@ class App extends Component {
         num++;
         document.getElementById('output').innerHTML = num;
     }
+    // myFunc();
     const reset = () =>{
       setTimeout(function(){ getStyle(); }, 1000);
       // if prime is above 100, change all to red and do alerts
@@ -237,13 +238,13 @@ class App extends Component {
             onChange={this.onSearchChange}
           >Searchbar: </ Search >
         </div>
-        <div>
-          < Table
+        <div class="robot">
+          {/* < Table
             list={list}
             pattern={searchTerm}
             onDismiss={this.onDismiss}
             isSearched={this.isSearched}
-          />
+          /> */}
         </div>
 {/* search in app */}
         {/* <form id="spot">
@@ -254,7 +255,7 @@ class App extends Component {
                 />
         </form> */}
         { list.filter(isSearched(searchTerm)).map(item =>
-        <div key={item.objectID}>
+        <div class="robot" key={item.objectID}>
           <span>
           <a href={item.url}>{item.title}</a>
           </span>
@@ -262,12 +263,6 @@ class App extends Component {
           <span> {item.num_comments} comments</span>,
           <span> {item.points} points</span>
           <span>
-            <button
-            onClick={()=>this.onDismiss(item.objectID)}
-            type="button"
-            >
-              Dismiss
-            </button>
             < Button onClick={()=> this.onDismiss(item.objectID)}> Delete </Button>
           </span>
         </div>)}
@@ -277,6 +272,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <div id="output">
+          0
           </div>
           <h1>{msg2}</h1>
           <div style = {xp1} id="xp" onClick={getStyle}>{msg} </div>

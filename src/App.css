@@ -39,3 +39,10 @@ a:hover{
   text-decoration: none;
   color:gold;
 }
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.robot{
+  font-family: 'Roboto', sans-serif;
+  color: blue;
+}
