@@ -5,3 +5,10 @@
     font-size: 1.6vw;
     margin: .3rem;
 }
+#btn:hover{
+    background-color: purple;
+    color: gold;
+    padding: .8rem;
+    font-size: 1.7vw;
+    margin: .3rem;
+}
