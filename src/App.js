@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Portfolio from './components/Portfolio';
 import Search from './components/Search';
 import Table from './components/Table';
-
+import Button from './components/Button';
 
 import logo from './logo.svg';
 import './App.css';
@@ -268,6 +268,7 @@ class App extends Component {
             >
               Dismiss
             </button>
+            < Button onClick={()=> this.onDismiss(item.objectID)}> Delete </Button>
           </span>
         </div>)}
 
